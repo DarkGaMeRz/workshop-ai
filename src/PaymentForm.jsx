@@ -38,139 +38,171 @@ const PaymentForm = () => {
   };
 
   return (
-    <div className="bg-black text-white p-8 rounded-lg max-w-md mx-auto">
-      <form onSubmit={handleSubmit}>
-        {/* Header */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold mb-2">Payment Method</h2>
-          <p className="text-gray-400 text-sm">All transactions are secure and encrypted</p>
-        </div>
+    <div className="bg-gray-900 text-white">
+      {/* Top Section */}
+      <div className="bg-green-600 text-center py-12">
+        <h1 className="text-4xl font-bold text-white mb-4">PayFlow Demo</h1>
+        <p className="text-lg text-white">Experience seamless payment processing with modern React components and beautiful UI design</p>
+      </div>
 
-        {/* Name on Card */}
-        <div className="mb-6">
-          <label className="block text-sm font-medium mb-2">Name on Card</label>
-          <input
-            type="text"
-            name="nameOnCard"
-            value={formData.nameOnCard}
-            onChange={handleChange}
-            className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none"
-            placeholder="John Doe"
-          />
-        </div>
-
-        {/* Card Number and CVV */}
-        <div className="grid grid-cols-3 gap-4 mb-4">
-          <div className="col-span-2">
-            <label className="block text-sm font-medium mb-2">Card Number</label>
-            <input
-              type="text"
-              name="cardNumber"
-              value={formData.cardNumber}
-              onChange={handleChange}
-              className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none"
-              placeholder="1234 5678 9012 3456"
-            />
+      {/* Features Section */}
+      <div className="bg-white text-black py-12">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="text-center">
+            <div className="text-green-600 text-4xl mb-4">🔒</div>
+            <h3 className="text-xl font-semibold mb-2">Secure Processing</h3>
+            <p className="text-gray-600">End-to-end encryption ensures your payment data is always protected and secure.</p>
           </div>
-          <div>
-            <label className="block text-sm font-medium mb-2">CVV</label>
-            <input
-              type="text"
-              name="cvv"
-              value={formData.cvv}
-              onChange={handleChange}
-              className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none"
-              placeholder="123"
-              maxLength="3"
-            />
+          <div className="text-center">
+            <div className="text-green-600 text-4xl mb-4">⚡</div>
+            <h3 className="text-xl font-semibold mb-2">Lightning Fast</h3>
+            <p className="text-gray-600">Powered by Vite and React for instant load times and smooth interactions.</p>
+          </div>
+          <div className="text-center">
+            <div className="text-green-600 text-4xl mb-4">📱</div>
+            <h3 className="text-xl font-semibold mb-2">Mobile Ready</h3>
+            <p className="text-gray-600">Fully responsive design that works perfectly on all devices and screen sizes.</p>
           </div>
         </div>
+      </div>
 
-        <p className="text-gray-400 text-xs mb-6">Enter your 16-digit number.</p>
+      {/* Payment Form Section */}
+      <div className="py-12">
+        <div className="bg-gray-900 text-white p-8 rounded-lg max-w-md mx-auto shadow-lg">
+          <form onSubmit={handleSubmit}>
+            {/* Header */}
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold mb-2">Payment Method</h2>
+              <p className="text-gray-400 text-sm">All transactions are secure and encrypted</p>
+            </div>
 
-        {/* Month and Year */}
-        <div className="grid grid-cols-2 gap-4 mb-8">
-          <div>
-            <label className="block text-sm font-medium mb-2">Month</label>
-            <select
-              name="month"
-              value={formData.month}
-              onChange={handleChange}
-              className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 focus:outline-none appearance-none"
-            >
-              <option value="MM">MM</option>
-              {[...Array(12)].map((_, i) => (
-                <option key={i} value={String(i + 1).padStart(2, '0')}>
-                  {String(i + 1).padStart(2, '0')}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-2">Year</label>
-            <select
-              name="year"
-              value={formData.year}
-              onChange={handleChange}
-              className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 focus:outline-none appearance-none"
-            >
-              <option value="YYYY">YYYY</option>
-              {[...Array(6)].map((_, i) => (
-                <option key={i} value={2024 + i}>
-                  {2024 + i}
-                </option>
-              ))}
-            </select>
-          </div>
+            {/* Name on Card */}
+            <div className="mb-6">
+              <label className="block text-sm font-medium mb-2">Name on Card</label>
+              <input
+                type="text"
+                name="nameOnCard"
+                value={formData.nameOnCard}
+                onChange={handleChange}
+                className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none"
+                placeholder="John Doe"
+              />
+            </div>
+
+            {/* Card Number and CVV */}
+            <div className="grid grid-cols-3 gap-4 mb-4">
+              <div className="col-span-2">
+                <label className="block text-sm font-medium mb-2">Card Number</label>
+                <input
+                  type="text"
+                  name="cardNumber"
+                  value={formData.cardNumber}
+                  onChange={handleChange}
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none"
+                  placeholder="1234 5678 9012 3456"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">CVV</label>
+                <input
+                  type="text"
+                  name="cvv"
+                  value={formData.cvv}
+                  onChange={handleChange}
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none"
+                  placeholder="123"
+                  maxLength="3"
+                />
+              </div>
+            </div>
+
+            <p className="text-gray-400 text-xs mb-6">Enter your 16-digit number.</p>
+
+            {/* Month and Year */}
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              <div>
+                <label className="block text-sm font-medium mb-2">Month</label>
+                <select
+                  name="month"
+                  value={formData.month}
+                  onChange={handleChange}
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 focus:outline-none appearance-none"
+                >
+                  <option value="MM">MM</option>
+                  {[...Array(12)].map((_, i) => (
+                    <option key={i} value={String(i + 1).padStart(2, '0')}>
+                      {String(i + 1).padStart(2, '0')}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">Year</label>
+                <select
+                  name="year"
+                  value={formData.year}
+                  onChange={handleChange}
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 focus:outline-none appearance-none"
+                >
+                  <option value="YYYY">YYYY</option>
+                  {[...Array(6)].map((_, i) => (
+                    <option key={i} value={2024 + i}>
+                      {2024 + i}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Billing Address */}
+            <div className="mb-6">
+              <h3 className="text-lg font-medium mb-2">Billing Address</h3>
+              <p className="text-gray-400 text-sm mb-4">The billing address associated with your payment method</p>
+
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  name="sameAsShipping"
+                  checked={formData.sameAsShipping}
+                  onChange={handleChange}
+                  className="w-4 h-4 bg-blue-600 border-blue-600 rounded focus:ring-blue-500 focus:ring-2"
+                />
+                <label className="ml-2 text-sm">Same as shipping address</label>
+              </div>
+            </div>
+
+            {/* Comments */}
+            <div className="mb-8">
+              <label className="block text-sm font-medium mb-2">Comments</label>
+              <textarea
+                name="comments"
+                rows="4"
+                value={formData.comments}
+                onChange={handleChange}
+                className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none resize-none"
+                placeholder="Add any additional comments"
+              />
+            </div>
+
+            {/* Buttons */}
+            <div className="flex gap-4">
+              <button
+                type="submit"
+                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+              >
+                Submit
+              </button>
+              <button
+                type="button"
+                onClick={handleCancel}
+                className="flex-1 bg-gray-700 hover:bg-gray-600 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
         </div>
-
-        {/* Billing Address */}
-        <div className="mb-6">
-          <h3 className="text-lg font-medium mb-2">Billing Address</h3>
-          <p className="text-gray-400 text-sm mb-4">The billing address associated with your payment method</p>
-
-          <div className="flex items-center">
-            <input
-              type="checkbox"
-              name="sameAsShipping"
-              checked={formData.sameAsShipping}
-              onChange={handleChange}
-              className="w-4 h-4 bg-blue-600 border-blue-600 rounded focus:ring-blue-500 focus:ring-2"
-            />
-            <label className="ml-2 text-sm">Same as shipping address</label>
-          </div>
-        </div>
-
-        {/* Comments */}
-        <div className="mb-8">
-          <label className="block text-sm font-medium mb-2">Comments</label>
-          <textarea
-            name="comments"
-            rows="4"
-            value={formData.comments}
-            onChange={handleChange}
-            className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none resize-none"
-            placeholder="Add any additional comments"
-          />
-        </div>
-
-        {/* Buttons */}
-        <div className="flex gap-4">
-          <button
-            type="submit"
-            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
-          >
-            Submit
-          </button>
-          <button
-            type="button"
-            onClick={handleCancel}
-            className="flex-1 bg-gray-700 hover:bg-gray-600 text-white font-medium py-3 px-6 rounded-lg transition-colors"
-          >
-            Cancel
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 };
