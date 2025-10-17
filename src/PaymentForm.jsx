@@ -38,37 +38,68 @@ const PaymentForm = () => {
   };
 
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-900 text-white">
       {/* Top Section */}
-      <div className="bg-green-600 text-center py-12">
-        <h1 className="text-4xl font-bold text-white mb-4">PayFlow Demo</h1>
-        <p className="text-lg text-white">Experience seamless payment processing with modern React components and beautiful UI design</p>
+      <div className="bg-green-600 text-center py-16 px-4">
+        <div className="flex items-center justify-center gap-4 mb-6">
+          <div className="text-5xl">💎</div>
+          <div className="text-5xl">⚛️</div>
+        </div>
+        <h1 className="text-5xl font-bold text-white mb-4">PayFlow Demo</h1>
+        <p className="text-lg text-white max-w-2xl mx-auto">Experience seamless payment processing with modern React components<br />and beautiful UI design</p>
       </div>
 
       {/* Features Section */}
-      <div className="bg-white text-black py-12">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="text-green-600 text-4xl mb-4">🔒</div>
-            <h3 className="text-xl font-semibold mb-2">Secure Processing</h3>
-            <p className="text-gray-600">End-to-end encryption ensures your payment data is always protected and secure.</p>
+      <div className="bg-gray-200 text-black py-16 px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4">Modern Payment Solutions</h2>
+          <p className="text-gray-700 max-w-2xl mx-auto">Built with React and Vite for lightning-fast performance. Secure, responsive, and user-friendly payment forms that adapt to any device.</p>
+        </div>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+          <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-green-600 text-3xl">🔒</div>
+            </div>
+            <h3 className="text-xl font-bold mb-3">Secure Processing</h3>
+            <p className="text-gray-600 text-sm">End-to-end encryption ensures your payment data is always protected and secure.</p>
           </div>
-          <div className="text-center">
-            <div className="text-green-600 text-4xl mb-4">⚡</div>
-            <h3 className="text-xl font-semibold mb-2">Lightning Fast</h3>
-            <p className="text-gray-600">Powered by Vite and React for instant load times and smooth interactions.</p>
+          <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-green-600 text-3xl">⚡</div>
+            </div>
+            <h3 className="text-xl font-bold mb-3">Lightning Fast</h3>
+            <p className="text-gray-600 text-sm">Powered by Vite and React for instant load times and smooth interactions.</p>
           </div>
-          <div className="text-center">
-            <div className="text-green-600 text-4xl mb-4">📱</div>
-            <h3 className="text-xl font-semibold mb-2">Mobile Ready</h3>
-            <p className="text-gray-600">Fully responsive design that works perfectly on all devices and screen sizes.</p>
+          <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-green-600 text-3xl">📱</div>
+            </div>
+            <h3 className="text-xl font-bold mb-3">Mobile Ready</h3>
+            <p className="text-gray-600 text-sm">Fully responsive design that works perfectly on all devices and screen sizes.</p>
           </div>
+        </div>
+        
+        {/* Interactive Demo Section */}
+        <div className="max-w-2xl mx-auto mt-12 bg-white rounded-xl shadow-lg p-8">
+          <h3 className="text-2xl font-bold text-center mb-6 text-gray-900">Interactive Demo</h3>
+          <div className="flex justify-center">
+            <button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors flex items-center gap-2">
+              <span>✓</span>
+              Click Counter: 0
+            </button>
+          </div>
+          <p className="text-center text-gray-500 text-sm mt-4">Edit <code className="bg-gray-100 px-2 py-1 rounded">src/App.jsx</code> and save to test Hot Module Replacement</p>
         </div>
       </div>
 
-      {/* Payment Form Section */}
-      <div className="py-12">
-        <div className="bg-gray-900 text-white p-8 rounded-lg max-w-md mx-auto shadow-lg">
+      {/* Try Our Payment Form Section */}
+      <div className="bg-slate-800 py-16 px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">Try Our Payment Form</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">Experience our beautifully designed payment form with real-time validation, secure input handling, and smooth animations.</p>
+        </div>
+        
+        <div className="bg-gray-900 text-white p-8 rounded-xl max-w-md mx-auto shadow-2xl">
           <form onSubmit={handleSubmit}>
             {/* Header */}
             <div className="mb-8">
@@ -188,7 +219,7 @@ const PaymentForm = () => {
             <div className="flex gap-4">
               <button
                 type="submit"
-                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+                className="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
               >
                 Submit
               </button>
